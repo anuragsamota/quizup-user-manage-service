@@ -16,9 +16,7 @@ const app = express();
 
 
 const corsOptions = {
-  origin: "*", // or "*" for all origins (not recommended for production)
-  credentials: true, // if you want to allow cookies
-
+  origin: "*",
 };
 
 app.use(morgan('tiny'));
