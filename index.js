@@ -16,9 +16,9 @@ const app = express();
 
 
 const corsOptions = {
-  origin: "http://localhost:5173", // or "*" for all origins (not recommended for production)
+  origin: "*", // or "*" for all origins (not recommended for production)
   credentials: true, // if you want to allow cookies
-  
+
 };
 
 app.use(morgan('tiny'));
