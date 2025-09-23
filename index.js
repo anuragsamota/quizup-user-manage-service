@@ -15,8 +15,13 @@ config();
 const app = express();
 
 
+const corsOptions = {
+  origin: "*", 
+  credentials: true, // if you want to allow cookies
+};
+
 app.use(morgan('tiny'));
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(passport.initialize());
 
