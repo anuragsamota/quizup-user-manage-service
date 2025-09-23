@@ -16,7 +16,7 @@ const app = express();
 
 
 const corsOptions = {
-  origin: "*", 
+  origin: "http://localhost:5173", // or "*" for all origins (not recommended for production)
   credentials: true, // if you want to allow cookies
 };
 
