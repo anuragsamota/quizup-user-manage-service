@@ -5,10 +5,8 @@ import * as controller from '../controllers/controller.js';
 
 const router = Router();
 
-
-
 import { auth } from '../controllers/controller.js';
-import passport from '../passport.js';
+import { getOrganizedQuizzes } from '../controllers/organizedQuizzesController.js';
 
 // Auth
 router.post('/register', controller.register);
@@ -20,6 +18,10 @@ router.put('/profile', auth, controller.updateProfile);
 
 // Quiz history (passport-jwt protected)
 router.get('/history', auth, controller.getQuizHistory);
+
+// Organized quizzes endpoint (auth required, concise route)
+router.get('/organized', auth, getOrganizedQuizzes);
+
 router.post('/history', auth, controller.addQuizHistory);
 
 export default router;
