@@ -1,3 +1,14 @@
+// Delete user account (authorized)
+export async function deleteAccount(req, res) {
+	try {
+		const userId = req.user._id;
+		const deleted = await User.findByIdAndDelete(userId);
+		if (!deleted) return res.status(404).json({ error: 'User not found' });
+		res.json({ msg: 'User account deleted successfully' });
+	} catch (error) {
+		res.status(500).json({ error: error.message });
+	}
+}
 
 
 import User from '../models/user.js';

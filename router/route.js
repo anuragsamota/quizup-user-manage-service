@@ -15,6 +15,7 @@ router.post('/login', controller.login); // passport-local used in controller
 // Profile (passport-jwt protected)
 router.get('/profile', auth, controller.getProfile);
 router.put('/profile', auth, controller.updateProfile);
+router.delete('/profile', auth, controller.deleteAccount);
 
 // Quiz history (passport-jwt protected)
 router.get('/history', auth, controller.getQuizHistory);
